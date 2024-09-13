@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "Arial";
+  src: url("assets/fonts/arial/ArialMT.woff2") format("woff2"),
+    url("assets/fonts/arial/ArialMT.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: rgb(37, 40, 42);
+  color: white;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slider__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  margin-bottom: 1.5rem;
+}
+
+/* Slides styles start */
+
+.slide {
+  flex: 1 0 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+#comic1:checked ~ .slider {
+  transform: translateX(0);
+}
+
+#comic2:checked ~ .slider {
+  transform: translateX(-100%);
+}
+
+#comic3:checked ~ .slider {
+  transform: translateX(-200%);
+}
+
+#comic4:checked ~ .slider {
+  transform: translateX(-300%);
+}
+
+/* Slides styles start end */
+
+.captions__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+/* Dots styles start */
+
+.dots {
+  display: flex;
+  justify-content: center;
+  /* gap: 1rem; */
+  /* margin-top: 1rem; */
+}
+
+.dot {
+  /* width: 1rem;
+  height: 1rem; */
+  /* margin: 0.5rem; */
+  padding: 0.7rem;
+  /* background-color: whitesmoke; */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot__visible {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+.dot:hover .dot__visible {
+  background-color: rgb(165, 203, 236);
+}
+
+.dot:active .dot__visible {
+  background-color: rgb(207, 78, 110);
+}
+
+/* .dot__container:hover .dot{
+  background-color: rgb(165, 203, 236);
+} */
+
+/* .dot__container {
+    display: flex;
+} */
+
+#comic1:checked ~ .captions__container .dots label[for="comic1"] .dot__visible {
+  background: transparent;
+  border: 0.1rem solid;
+}
+
+#comic2:checked ~ .captions__container .dots label[for="comic2"] .dot__visible {
+  background: transparent;
+  border: 0.1rem solid;
+}
+
+#comic3:checked ~ .captions__container .dots label[for="comic3"] .dot__visible {
+  background: transparent;
+  border: 0.1rem solid;
+}
+
+#comic4:checked ~ .captions__container .dots label[for="comic4"] .dot__visible {
+  background: transparent;
+  border: 0.1rem solid;
+}
+
+#comic1:checked
+  ~ .captions__container
+  .dots
+  label[for="comic1"]:hover
+  .dot__visible,
+#comic2:checked
+  ~ .captions__container
+  .dots
+  label[for="comic2"]:hover
+  .dot__visible,
+#comic3:checked
+  ~ .captions__container
+  .dots
+  label[for="comic3"]:hover
+  .dot__visible,
+#comic4:checked
+  ~ .captions__container
+  .dots
+  label[for="comic4"]:hover
+  .dot__visible {
+  border-color: rgb(165, 203, 236);
+}
+
+#comic1:checked
+  ~ .captions__container
+  .dots
+  label[for="comic1"]:active
+  .dot__visible,
+#comic2:checked
+  ~ .captions__container
+  .dots
+  label[for="comic2"]:active
+  .dot__visible,
+#comic3:checked
+  ~ .captions__container
+  .dots
+  label[for="comic3"]:active
+  .dot__visible,
+#comic4:checked
+  ~ .captions__container
+  .dots
+  label[for="comic4"]:active
+  .dot__visible {
+  background-color: rgb(207, 78, 110);
+}
+
+/* Dots styles end */
+
+/* Captions styles start */
+
+.captions {
+  flex: 1;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-weight: 400;
+  transition: opacity 0.5s;
+  height: 0;
+}
+
+#comic1:checked ~ .captions__container .captions #caption1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+#comic2:checked ~ .captions__container .captions #caption2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+#comic3:checked ~ .captions__container .captions #caption3 {
+  opacity: 1;
+  visibility: visible;
+}
+
+#comic4:checked ~ .captions__container .captions #caption4 {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Captions styles end */
+
+.link {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: whitesmoke;
+  opacity: 50%;
+  margin: 1rem;
+  transition: 0.5s;
+}
+
+.link:hover {
+  opacity: 100%;
+}
+
+/* Media start */
+
+/* for 768px */
+
+@media only screen and (max-width: 48rem) {
+  .captions__container {
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+
+  /* .caption {
+    align-items: baseline;
+  } */
+
+  .dots {
+    margin-bottom: 1.85rem;
+  }
+}
+
+
+@media only screen and (max-width: 27.5rem) {
+
+
+  .caption {
+    font-size: 1.1rem;
+  }
+
+
+}
+/* Media end */
