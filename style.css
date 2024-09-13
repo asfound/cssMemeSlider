@@ -201,28 +201,36 @@ img {
 }
 
 .caption {
-  display: none;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
   text-align: left;
   font-size: 1.5rem;
   font-weight: bold;
   font-weight: 400;
-  transition: 0.5s;
+  transition: opacity 0.5s;
+  height: 0;
 }
 
 #comic1:checked ~ .captions__container .captions #caption1 {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 #comic2:checked ~ .captions__container .captions #caption2 {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 #comic3:checked ~ .captions__container .captions #caption3 {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 #comic4:checked ~ .captions__container .captions #caption4 {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Captions styles end */
