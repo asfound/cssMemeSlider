@@ -114,6 +114,10 @@ img {
   background-color: rgb(165, 203, 236);
 }
 
+.dot:active .dot__visible {
+  background-color: rgb(207, 78, 110);
+}
+
 /* .dot__container:hover .dot{
   background-color: rgb(165, 203, 236);
 } */
@@ -165,6 +169,29 @@ img {
   border-color: rgb(165, 203, 236);
 }
 
+#comic1:checked
+  ~ .captions__container
+  .dots
+  label[for="comic1"]:active
+  .dot__visible,
+#comic2:checked
+  ~ .captions__container
+  .dots
+  label[for="comic2"]:active
+  .dot__visible,
+#comic3:checked
+  ~ .captions__container
+  .dots
+  label[for="comic3"]:active
+  .dot__visible,
+#comic4:checked
+  ~ .captions__container
+  .dots
+  label[for="comic4"]:active
+  .dot__visible {
+  background-color: rgb(207, 78, 110);
+}
+
 /* Dots styles end */
 
 /* Captions styles start */
@@ -179,6 +206,7 @@ img {
   font-size: 1.5rem;
   font-weight: bold;
   font-weight: 400;
+  transition: 0.5s;
 }
 
 #comic1:checked ~ .captions__container .captions #caption1 {
