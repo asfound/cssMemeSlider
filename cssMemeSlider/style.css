@@ -258,9 +258,23 @@ img {
     align-items: normal;
   }
 
+  /* .caption {
+    align-items: baseline;
+  } */
+
   .dots {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.85rem;
   }
 }
 
+
+@media only screen and (max-width: 27.5rem) {
+
+
+  .caption {
+    font-size: 1.1rem;
+  }
+
+
+}
 /* Media end */
