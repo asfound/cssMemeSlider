@@ -43,6 +43,7 @@ input[type="radio"] {
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
+  margin-bottom: 1.5rem;
 }
 
 /* Slides styles start */
@@ -80,7 +81,7 @@ img {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 /* Dots styles start */
@@ -103,14 +104,14 @@ img {
 }
 
 .dot__visible {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: whitesmoke;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: whitesmoke;
 }
 
 .dot:hover .dot__visible {
-    background-color: rgb(165, 203, 236);
+  background-color: rgb(165, 203, 236);
 }
 
 /* .dot__container:hover .dot{
@@ -141,10 +142,26 @@ img {
   border: 0.1rem solid;
 }
 
-#comic1:checked ~ .captions__container .dots label[for="comic1"]:hover .dot__visible,
-#comic2:checked ~ .captions__container .dots label[for="comic2"]:hover .dot__visible,
-#comic3:checked ~ .captions__container .dots label[for="comic3"]:hover .dot__visible,
-#comic4:checked ~ .captions__container .dots label[for="comic4"]:hover .dot__visible{
+#comic1:checked
+  ~ .captions__container
+  .dots
+  label[for="comic1"]:hover
+  .dot__visible,
+#comic2:checked
+  ~ .captions__container
+  .dots
+  label[for="comic2"]:hover
+  .dot__visible,
+#comic3:checked
+  ~ .captions__container
+  .dots
+  label[for="comic3"]:hover
+  .dot__visible,
+#comic4:checked
+  ~ .captions__container
+  .dots
+  label[for="comic4"]:hover
+  .dot__visible {
   border-color: rgb(165, 203, 236);
 }
 
@@ -206,7 +223,7 @@ img {
   }
 
   .dots {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
