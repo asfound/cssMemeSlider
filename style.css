@@ -88,46 +88,63 @@ img {
 .dots {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  /* gap: 1rem; */
   /* margin-top: 1rem; */
 }
 
 .dot {
-  width: 1rem;
-  height: 1rem;
-  background-color: whitesmoke;
+  /* width: 1rem;
+  height: 1rem; */
+  /* margin: 0.5rem; */
+  padding: 0.7rem;
+  /* background-color: whitesmoke; */
   border-radius: 50%;
   cursor: pointer;
 }
 
-.dot:hover {
+.dot__visible {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.dot:hover .dot__visible {
+    background-color: rgb(165, 203, 236);
+}
+
+/* .dot__container:hover .dot{
   background-color: rgb(165, 203, 236);
-}
+} */
 
-#comic1:checked ~ .captions__container .dots label[for="comic1"] {
+/* .dot__container {
+    display: flex;
+} */
+
+#comic1:checked ~ .captions__container .dots label[for="comic1"] .dot__visible {
   background: transparent;
   border: 0.1rem solid;
 }
 
-#comic2:checked ~ .captions__container .dots label[for="comic2"] {
+#comic2:checked ~ .captions__container .dots label[for="comic2"] .dot__visible {
   background: transparent;
   border: 0.1rem solid;
 }
 
-#comic3:checked ~ .captions__container .dots label[for="comic3"] {
+#comic3:checked ~ .captions__container .dots label[for="comic3"] .dot__visible {
   background: transparent;
   border: 0.1rem solid;
 }
 
-#comic4:checked ~ .captions__container .dots label[for="comic4"] {
+#comic4:checked ~ .captions__container .dots label[for="comic4"] .dot__visible {
   background: transparent;
   border: 0.1rem solid;
 }
 
-#comic1:checked ~ .captions__container .dots label[for="comic1"]:hover,
-#comic2:checked ~ .captions__container .dots label[for="comic2"]:hover,
-#comic3:checked ~ .captions__container .dots label[for="comic3"]:hover,
-#comic4:checked ~ .captions__container .dots label[for="comic4"]:hover {
+#comic1:checked ~ .captions__container .dots label[for="comic1"]:hover .dot__visible,
+#comic2:checked ~ .captions__container .dots label[for="comic2"]:hover .dot__visible,
+#comic3:checked ~ .captions__container .dots label[for="comic3"]:hover .dot__visible,
+#comic4:checked ~ .captions__container .dots label[for="comic4"]:hover .dot__visible{
   border-color: rgb(165, 203, 236);
 }
 
@@ -183,16 +200,14 @@ img {
 /* for 768px */
 
 @media only screen and (max-width: 48rem) {
-
-.captions__container {
+  .captions__container {
     flex-direction: column-reverse;
-align-items: normal;
-}
+    align-items: normal;
+  }
 
-.dots {
+  .dots {
     margin-bottom: 1rem;
-}
-    
+  }
 }
 
 /* Media end */
