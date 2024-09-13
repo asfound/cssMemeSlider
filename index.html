@@ -7,16 +7,43 @@
     <title>CSS Slider</title>
   </head>
   <body>
-    <header class="header">
-      <h1 class="title">CSS Strange Planet Slider</h1>
-    </header>
-    <main class="main"><img src="/img/sp_1.jpg" alt="meme" class="main__img" /><p class="main__caption">It's a cat!</p></main>
-    <footer class="footer">
-      <a
-        href="https://en.wikipedia.org/wiki/Nathan_W._Pyle"
-        class="footer__link"
-        >All images belong to Nathan W. Pyle</a
-      >
-    </footer>
+    <div class="slider__container">
+      <input type="radio" name="slider" id="comic1" checked />
+      <input type="radio" name="slider" id="comic2" />
+      <input type="radio" name="slider" id="comic3" />
+      <input type="radio" name="slider" id="comic4" />
+
+      <div class="slider">
+        <div class="slide">
+          <img src="/img/sp_1.jpg" alt="cat comic" />
+        </div>
+        <div class="slide">
+          <img src="/img/sp_2.jpg" alt="love comic" />
+        </div>
+        <div class="slide">
+          <img src="/img/sp_3.jpg" alt="cooking comic" />
+        </div>
+        <div class="slide">
+          <img src="/img/sp_4.jpg" alt="peekaboo comic" />
+        </div>
+      </div>
+
+      <div class="captions">
+        <p class="caption" id="caption1">It's a cat!</p>
+        <p class="caption"  id="caption2">Love is cruel...</p>
+        <p class="caption"  id="caption3">Mmm, smokey!</p>
+        <p class="caption"  id="caption4">Peek-a-boo!</p>
+      </div>
+
+      <div class="dots">
+        <label for="comic1" class="dot"></label>
+        <label for="comic2" class="dot"></label>
+        <label for="comic3" class="dot"></label>
+        <label for="comic4" class="dot"></label>
+      </div>
+    </div>
+    <!-- <a href="https://en.wikipedia.org/wiki/Nathan_W._Pyle" class="link"
+      >All images belong to Nathan W. Pyle</a
+    > -->
   </body>
 </html>

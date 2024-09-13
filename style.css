@@ -7,15 +7,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Arial";
-  src: url("fonts/arial/Arial-ItalicMT.woff2") format("woff2"),
-    url("fonts/arial/Arial-ItalicMT.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -23,27 +14,142 @@
 }
 
 body {
-    background-color: rgb(123, 169, 216);
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
   font-family: "Arial", sans-serif;
+  background-color: rgb(37, 40, 42);
+  color: white;
 }
 
-.header {
-    margin: 1%;
-    text-align: center;
+input[type="radio"] {
+  display: none;
 }
 
-.main {
-display: flex;
-flex-direction: column;
-align-items: center;
+.slider__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2rem;
 }
 
-.main__img {
-    max-width: 70%;
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
 }
 
-.footer {
-    margin: 1%;
-    text-align: center;
+/* Slides styles start */
+
+.slide {
+  flex: 1 0 100%;
+  
 }
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+#comic1:checked ~ .slider {
+  transform: translateX(0);
+}
+
+#comic2:checked ~ .slider {
+  transform: translateX(-100%);
+}
+
+#comic3:checked ~ .slider {
+  transform: translateX(-200%);
+}
+
+#comic4:checked ~ .slider {
+  transform: translateX(-300%);
+}
+
+/* Slides styles start end */
+
+/* Dots styles start */
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot:hover {
+    background-color: rgb(165, 203, 236);
+}
+
+/* input[type="radio"]:checked + .slider ~ .dots label.dot {
+    background-color: whitesmoke;
+} */
+
+#comic1:checked ~ .dots label[for="comic1"] {
+    background: transparent;
+    border: 0.1rem solid;
+}
+
+#comic2:checked ~ .dots label[for="comic2"] {
+    background: transparent;
+    border: 0.1rem solid;
+}
+
+#comic3:checked ~ .dots label[for="comic3"] {
+    background: transparent;
+    border: 0.1rem solid;
+}
+
+#comic4:checked ~ .dots label[for="comic4"] {
+    background: transparent;
+    border: 0.1rem solid;
+}
+
+/* Dots styles end */
+
+/* Captions styles start */
+
+.captions {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.caption {
+  display: none;
+}
+
+#comic1:checked ~ .captions #caption1 {
+  display: block;
+}
+
+#comic2:checked ~ .captions #caption2 {
+  display: block;
+}
+
+#comic3:checked ~ .captions #caption3 {
+  display: block;
+}
+
+#comic4:checked ~ .captions #caption4 {
+  display: block;
+}
+
+/* Captions styles end */
